@@ -1,0 +1,8 @@
+Author: Hy Truong Son
+Email: hytruongson@uchicago.edu
+Institution: University of Chicago
+
+
+Gibbs sampling on 2D Ising model
+--------------------------------
+$ python3 ising_gibbs.py
