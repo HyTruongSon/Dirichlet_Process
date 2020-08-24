@@ -6,3 +6,8 @@ Institution: University of Chicago
 Gibbs sampling on 2D Ising model
 --------------------------------
 $ python3 ising_gibbs.py
+
+
+Stick-breaking process
+----------------------
+$ stick_breaking.py
