@@ -11,3 +11,8 @@ $ python3 ising_gibbs.py
 Stick-breaking process
 ----------------------
 $ stick_breaking.py
+
+
+Dirichlet Process Gaussian Mixture Model (DPGMM) -- Gibbs sampling
+------------------------------------------------------------------
+$ gibbs_dirichlet_process.py
