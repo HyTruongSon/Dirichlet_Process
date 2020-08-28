@@ -157,7 +157,7 @@ def fit_dp(data, alpha, epsilon, m0, V0, S0, nu0, num_iters):
 		sigma_new = []
 
 		for k in range(K):
-			if N[k] > num_dim:
+			if N[k] > num_dim: # Threshold is number of dimensions to avoid negative definite covariance matrix
 				x = data[z == k, :]
 				x_bar = np.sum(x, axis = 0) / x.shape[0]
 				cov = np.matmul((x - x_bar).transpose(), x - x_bar) / x.shape[0]
@@ -166,7 +166,7 @@ def fit_dp(data, alpha, epsilon, m0, V0, S0, nu0, num_iters):
 				mu_new.append(x_bar)
 				sigma_new.append(cov)
 
-		if N[K] > num_dim:
+		if N[K] > num_dim: # Threshold is number of dimensions to avoid negative definite covariance matrix
 			pi_new.append(alpha / (alpha + num_data - 1))
 			mu_new.append(m0)
 			sigma_new.append(S0 / (nu0 + num_dim + 1))
@@ -207,7 +207,7 @@ K = len(mean_)
 print("Final number of components:", K)
 for k in range(K):
 	plt.plot(mean_[k][0], mean_[k][1], 'bx')
-plt.title("Dirichlet Process Gaussian Mixture Model -- Gibbs sampling " + str(num_iters) + " iterations")
+plt.title("DPGMM -- collapsed Gibbs sampling " + str(num_iters) + " iterations")
 plt.show()
 
 
@@ -239,5 +239,5 @@ plt.show()
 
 Z = np.log(density(X, Y, pi_, mean_, cov_))
 plt.contour(X, Y, Z, colors = 'black')
-plt.title('Dirichlet Process density')
+plt.title('DPGMM density -- collapsed Gibbs sampling')
 plt.show()
