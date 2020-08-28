@@ -16,3 +16,8 @@ $ stick_breaking.py
 Dirichlet Process Gaussian Mixture Model (DPGMM) -- Gibbs sampling
 ------------------------------------------------------------------
 $ gibbs_dirichlet_process.py
+
+
+Dirichlet Process Gaussian Mixture Model (DPGMM) -- collapsed Gibbs sampling
+----------------------------------------------------------------------------
+$ collapsed_gibbs_dirichlet_process.py
